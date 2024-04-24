@@ -1,0 +1,17 @@
+/* src/styles/Global.css */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  color: white;
+  background: #080823;
+  font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,0 +1,29 @@
+/* src/components/Card/MovieCard.css */
+.card {
+    flex: 1 1 22%;
+    max-width: 285px;
+    height: auto; /* Changed from a fixed height to auto */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    padding: 10px 15px; 
+}

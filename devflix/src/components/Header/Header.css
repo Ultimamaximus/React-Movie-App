@@ -1,0 +1,9 @@
+/* src/components/Header/Header.css */
+.search-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 125px;
+    background: #080823;
+}
