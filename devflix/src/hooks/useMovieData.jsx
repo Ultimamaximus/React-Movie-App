@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchMovies } from '../services/api';
 
 const useMovieData = (endpoint, page) => {
     const [data, setData] = useState([]);
