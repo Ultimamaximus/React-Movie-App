@@ -1,0 +1,11 @@
+/* Assuming this CSS is in MovieList.css or a global CSS file */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 15px;
+}
+
+

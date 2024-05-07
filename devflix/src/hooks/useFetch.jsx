@@ -1,29 +1,28 @@
-// src/hooks/useFetch.js
+// src/hooks/useFetch.jsx
 import { useState, useEffect } from 'react';
-import { fetchMoviesFromApi } from '../services/api';
 
-const useFetch = (url) => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+function useFetch(fetchFunction, param) {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const result = await fetchMoviesFromApi(url);
-        setData(result.results);
-        setError(null);
-      } catch (error) {
-        setError(error);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [url]);
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            try {
+                const result = await fetchFunction(param);
+                setData(result.results || []);
+            } catch (error) {
+                setError('Failed to fetch data');
+                console.error(error);
+            }
+            setIsLoading(false);
+        };
 
-  return { data, isLoading, error };
-};
+        fetchData();
+    }, [fetchFunction, param]);
+
+    return { data, isLoading, error };
+}
 
 export default useFetch;
-

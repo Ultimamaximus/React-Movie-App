@@ -1,6 +1,7 @@
 // src/components/Header/Header.jsx
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
+import './Header.css'
 
 function Header({ onSearchSubmit }) {  // Ensure this prop is received from the parent (App component)
     return (
