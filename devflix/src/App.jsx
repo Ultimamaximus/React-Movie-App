@@ -19,8 +19,7 @@ function App() {
 
     useEffect(() => {
         const handleScroll = debounce(() => {
-            // Check the scroll position sooner to preload data
-            if (!isLoading && (window.innerHeight + window.scrollY >= document.documentElement.offsetHeight - 1000)) {
+            if (!isLoading && hasMore && (window.innerHeight + window.scrollY >= document.documentElement.offsetHeight - 1000)) {
                 lastScrollTop.current = window.scrollY;
                 setPage(prevPage => prevPage + 1);
             }
@@ -31,7 +30,8 @@ function App() {
             window.removeEventListener('scroll', handleScroll);
             handleScroll.cancel();
         };
-    }, [isLoading]);
+    }, [isLoading, hasMore]);  // Add hasMore to dependency array
+    
 
     useEffect(() => {
         if (!isLoading) {

@@ -25,4 +25,4 @@ function useFetch(fetchFunction, param) {
     return { data, isLoading, error };
 }
 
-export default useFetch;
+
