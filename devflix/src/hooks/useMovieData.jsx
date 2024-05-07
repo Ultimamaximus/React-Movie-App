@@ -37,10 +37,11 @@ const useMovieData = (endpoint, page) => {
         return () => {
             cancel = true; // Set cancel flag on cleanup to avoid setting state after unmount
         };
-    }, [endpoint, page]); // Removed hasMore from dependencies as it's internally managed
+    }, [endpoint, page, hasMore]); // Include hasMore in the dependency array
 
     return { data, isLoading, error, hasMore };
 };
 
 export default useMovieData;
+
 

@@ -44,7 +44,7 @@ function App() {
             <Header onSearchSubmit={handleSearch} />
             <MovieList movies={movies} isLoading={isLoading} error={error} />
             {isLoading && <div>Loading more movies...</div>}
-            {error && <div>Error: {error}</div>}  // Display error message if there is an error
+            {error && <div>Error: {error}</div>}  
         </div>
     );
 }
