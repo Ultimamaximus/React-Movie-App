@@ -8,7 +8,7 @@ import './styles/Global.css';
 function App() {
     const [endpoint, setEndpoint] = useState('/discover/movie?sort_by=popularity.desc');
     const [page, setPage] = useState(1);
-    const { data: movies, isLoading, error } = useMovieData(endpoint, page);
+    const { data: movies, isLoading, error, hasMore } = useMovieData(endpoint, page);
 
     const lastScrollTop = useRef(0); // To hold the position before the latest data fetch
 
@@ -30,21 +30,21 @@ function App() {
             window.removeEventListener('scroll', handleScroll);
             handleScroll.cancel();
         };
-    }, [isLoading, hasMore]);  // Add hasMore to dependency array
-    
+    }, [isLoading, hasMore]);  // Ensure handleScroll reacts to isLoading and hasMore changes
 
     useEffect(() => {
         if (!isLoading) {
             // Restore the scroll position after data is fetched and the component is updated
             window.scrollTo(0, lastScrollTop.current);
         }
-    }, [movies, isLoading]); // Include isLoading and movies in the dependency array
+    }, [isLoading]); // Removed movies from the dependency array to focus on isLoading
 
     return (
         <div>
             <Header onSearchSubmit={handleSearch} />
             <MovieList movies={movies} isLoading={isLoading} error={error} />
             {isLoading && <div>Loading more movies...</div>}
+            {error && <div>Error: {error}</div>}  // Display error message if there is an error
         </div>
     );
 }

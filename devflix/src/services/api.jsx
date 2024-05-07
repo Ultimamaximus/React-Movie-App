@@ -3,10 +3,14 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const fetchMovies = async (endpoint) => {
     const apiKey = process.env.REACT_APP_API_KEY;
-    const url = `${BASE_URL}${endpoint}&api_key=${apiKey}`;
+    // Ensure the URL is constructed correctly whether or not endpoint already includes query parameters.
+    const url = `${BASE_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${apiKey}`;
     const response = await fetch(url);
+
     if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        const errMessage = await response.json().then(data => data.status_message || 'Unknown error occurred');
+        throw new Error(`Failed to fetch data: ${errMessage}`);
     }
+
     return await response.json();
 };
