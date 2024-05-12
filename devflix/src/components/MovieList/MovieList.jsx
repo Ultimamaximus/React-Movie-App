@@ -3,12 +3,9 @@ import React from 'react';
 import MovieCard from '../Card/MovieCard';
 import './MovieList.css'; 
 
-function MovieList({ movies, isLoading, error }) {
+function MovieList({ movies, error }) {
     if (error) {
         return <div>Error: {error.message}</div>;
-    }
-    if (isLoading) {
-        return <div>Loading...</div>;
     }
     return (
         <div className="row">
@@ -18,4 +15,5 @@ function MovieList({ movies, isLoading, error }) {
 }
 
 export default MovieList;
+
 
