@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MovieList from './components/MovieList/MovieList';
+import MovieInfoCard from './components/Info/MovieInfoCard';
 import useMovieData from './hooks/useMovieData';
 import { debounce } from 'lodash'; 
 import './styles/Global.css';
@@ -40,12 +42,15 @@ function App() {
     }, [isLoading]); // Removed movies from the dependency array to focus on isLoading
 
     return (
-        <div>
-            <Header onSearchSubmit={handleSearch} />
-            <MovieList movies={movies} isLoading={isLoading} error={error} />
-            {isLoading && <div>Loading more movies...</div>}
-            {error && <div>Error: {error}</div>}  
-        </div>
+        <Router>
+            <div>
+                <Header onSearchSubmit={handleSearch} />
+                <Routes>
+                    <Route path="/" element={<MovieList movies={movies} isLoading={isLoading} error={error} />} />
+                    <Route path="/movie/:id" element={<MovieInfoCard />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
