@@ -11,19 +11,21 @@ function SearchForm({ onSearchSubmit }) {
         if (searchTerm.trim()) {
             onSearchSubmit(searchTerm);
         }
-        setSearchTerm(''); // Optionally clear the search field after submitting
+        setSearchTerm('');
     };
 
     return (
         <form className="search-form" onSubmit={handleSubmit}>
+            <label htmlFor="search-input" className="sr-only">Search for movies</label>
             <input
                 type="text"
+                id="search-input"
                 className="search-input"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
                 placeholder="Search for movies"
             />
-            <button type="submit" className="search-button">
+            <button type="submit" className="search-button" aria-label="Search">
                 <FontAwesomeIcon icon={faSearch} />
             </button>
         </form>

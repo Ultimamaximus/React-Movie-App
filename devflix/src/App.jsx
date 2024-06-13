@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MovieList from './components/MovieList/MovieList';
 import MovieInfoCard from './components/Info/MovieInfoCard';
@@ -13,10 +13,12 @@ function App() {
     const { data: movies, isLoading, error, hasMore } = useMovieData(endpoint, page);
 
     const lastScrollTop = useRef(0); // To hold the position before the latest data fetch
+    const navigate = useNavigate();
 
     const handleSearch = (searchTerm) => {
         setPage(1);
         setEndpoint(`/search/movie?query=${encodeURIComponent(searchTerm)}`);
+        navigate('/');
     };
 
     useEffect(() => {
@@ -42,16 +44,22 @@ function App() {
     }, [isLoading]); // Removed movies from the dependency array to focus on isLoading
 
     return (
+        <div>
+            <Header onSearchSubmit={handleSearch} />
+            <Routes>
+                <Route path="/" element={<MovieList movies={movies} isLoading={isLoading} error={error} />} />
+                <Route path="/movie/:id" element={<MovieInfoCard />} />
+            </Routes>
+        </div>
+    );
+}
+
+function AppWrapper() {
+    return (
         <Router>
-            <div>
-                <Header onSearchSubmit={handleSearch} />
-                <Routes>
-                    <Route path="/" element={<MovieList movies={movies} isLoading={isLoading} error={error} />} />
-                    <Route path="/movie/:id" element={<MovieInfoCard />} />
-                </Routes>
-            </div>
+            <App />
         </Router>
     );
 }
 
-export default App;
+export default AppWrapper;

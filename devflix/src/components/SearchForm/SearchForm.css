@@ -15,6 +15,10 @@
     background-color: #333;
 }
 
+.search-input:focus {
+    background-color: #444;
+}
+
 .search-button {
     color: white;
     cursor: pointer;
@@ -27,5 +31,9 @@
 }
 
 .search-button:hover {
+    background-color: #2980B9;
+}
+
+.search-button:focus {
     background-color: #2980B9;
 }
