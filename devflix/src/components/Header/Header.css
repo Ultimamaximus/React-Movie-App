@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px 125px;
-    background: #080924;
+    background: linear-gradient(45deg, #080823,  #080823); /* Adjusted gradient to match body */
 }
 
 .logo-link {

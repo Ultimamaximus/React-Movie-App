@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovies } from '../../services/api';
+
 import './MovieInfoCard.css';
 
 const MovieInfoCard = () => {

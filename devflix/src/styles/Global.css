@@ -5,10 +5,13 @@
   outline: none;
 }
 
-body {
+html, body {
+  min-height: 100%;
   color: white;
-  background: #080823;
+  background: linear-gradient(19deg, #d39c94, #080823, #080823);
   font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {

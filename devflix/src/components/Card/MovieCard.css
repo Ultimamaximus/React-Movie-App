@@ -40,6 +40,7 @@
 /* Scale the card on hover */
 .card:hover {
     transform: scale(1.1);
+    z-index: 100;
 }
 
 /* Scale the image on hover */
