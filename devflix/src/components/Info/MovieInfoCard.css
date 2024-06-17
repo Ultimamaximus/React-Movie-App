@@ -7,7 +7,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 900px;
-  margin: 20px auto;
+  margin: 100px auto 20px; /* Updated top margin to 100px */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
 
 .movie-info-title {
   font-size: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-weight: bold;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .movie-info-poster {
-  width: 200px;
+  width: 250px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -55,7 +55,7 @@
 }
 
 .movie-info-rating {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   position: absolute; /* Positioning the rating */
   bottom: 20px;
@@ -64,4 +64,16 @@
   padding: 10px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.fa-star {
+  color: #e0c437;
+}
+
+.rating-number {
+  margin-left: 5px;
 }

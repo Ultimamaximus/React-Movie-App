@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovies } from '../../services/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './MovieInfoCard.css';
 
 const MovieInfoCard = () => {
@@ -45,7 +47,10 @@ const MovieInfoCard = () => {
         <div>Release Date: {movie.release_date}</div>
         <div>Duration: {movie.runtime} minutes</div>
       </div>
-      <div className="movie-info-rating">Rating: {movie.vote_average.toFixed(1)}</div>
+      <div className="movie-info-rating">
+        <FontAwesomeIcon icon={faStar} />
+        <span className="rating-number">{movie.vote_average.toFixed(1)}</span>
+      </div>
     </div>
   );
 };
