@@ -9,6 +9,9 @@
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Needed for positioning the rating */
 }
 
 .movie-info-title {
@@ -20,6 +23,7 @@
 .movie-info-body {
   display: flex;
   align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .movie-info-poster {
@@ -30,16 +34,34 @@
   margin-right: 20px;
 }
 
-.movie-info-summary {
+.movie-info-details {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.movie-info-summary {
   font-size: 1.1em;
   line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.movie-info-extra {
+  font-size: 0.9rem;
+  color: #bbb;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .movie-info-rating {
-  margin-top: 20px;
+  font-size: 1.1rem;
   font-weight: bold;
-  font-size: 1.2em;
-  color: #eeece2;
+  position: absolute; /* Positioning the rating */
+  bottom: 20px;
+  right: 20px;
+  background-color: #93929242; /* Match card background */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-

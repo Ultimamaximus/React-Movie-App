@@ -1,11 +1,15 @@
-/* src/components/Header/Header.css */
 .search-block {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 125px;
-    background: linear-gradient(45deg, #080823,  #080823); /* Adjusted gradient to match body */
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #080823, #080823); /* Adjusted gradient to match body */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays on top of other content */
+    
 }
 
 .logo-link {
@@ -23,9 +27,7 @@
 .logo-image {
     width: 100px;  /* Adjust size as needed */
     height: auto;
-    margin-right: -10px;  /* Space between logo and title */
-    border: none;  /* Remove any default border */
-    padding: 0;  /* Remove any default padding */
+    margin-right: 10px;  /* Space between logo and title */
 }
 
 .site-title {
