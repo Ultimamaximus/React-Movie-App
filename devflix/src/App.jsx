@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from './components/Header/Header';
 import MovieList from './components/MovieList/MovieList';
 import MovieInfoCard from './components/Info/MovieInfoCard';

@@ -1,3 +1,4 @@
+
 // src/services/api.js
 const BASE_URL = 'https://api.themoviedb.org/3';
 
