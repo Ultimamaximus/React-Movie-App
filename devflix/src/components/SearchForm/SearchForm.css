@@ -53,7 +53,7 @@
 @media (max-width: 768px) {
     .search-form {
         margin-left: 0;
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .search-input {
