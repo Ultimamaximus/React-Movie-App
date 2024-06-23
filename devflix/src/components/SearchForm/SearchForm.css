@@ -73,13 +73,13 @@
     }
 
     .search-input::placeholder {
-        font-size: 14px; /* Adjust as needed */
+        font-size: 17px; /* Adjust as needed */
     }
 }
 
 @media (max-width: 576px) {
     .search-form {
-        margin-left: 0;
+        margin-left: 15px;
         max-width: 100%;
     }
 
@@ -100,6 +100,6 @@
     }
 
     .search-input::placeholder {
-        font-size: 12px; /* Adjust as needed */
+        font-size: 16px; /* Adjust as needed */
     }
 }
