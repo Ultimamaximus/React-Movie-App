@@ -71,6 +71,10 @@
         border-radius: 50px;
         margin-left: 10px;
     }
+
+    .search-input::placeholder {
+        font-size: 14px; /* Adjust as needed */
+    }
 }
 
 @media (max-width: 576px) {
@@ -93,5 +97,9 @@
         width: calc(100% - 50px); /* Adjust the width here */
         border-radius: 50px;
         margin-left: 10px;
+    }
+
+    .search-input::placeholder {
+        font-size: 12px; /* Adjust as needed */
     }
 }
