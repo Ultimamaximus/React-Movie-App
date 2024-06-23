@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './SearchForm.css';
@@ -6,6 +6,7 @@ import './SearchForm.css';
 function SearchForm({ onSearchSubmit }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [isExpanded, setIsExpanded] = useState(false);
+    const inputRef = useRef(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -17,6 +18,11 @@ function SearchForm({ onSearchSubmit }) {
 
     const handleIconClick = () => {
         setIsExpanded(!isExpanded);
+        if (!isExpanded) {
+            setTimeout(() => {
+                inputRef.current.focus();
+            }, 300); // delay to match the transition duration
+        }
     };
 
     return (
@@ -29,6 +35,7 @@ function SearchForm({ onSearchSubmit }) {
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
                 placeholder="Search for movies"
+                ref={inputRef}
             />
             <button type="submit" className="search-button" aria-label="Search">
                 <FontAwesomeIcon icon={faSearch} onClick={handleIconClick} />
