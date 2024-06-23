@@ -1,4 +1,4 @@
-/* Adjust the card size as needed */
+/* src/components/MovieCard/MovieCard.css */
 .card {
     flex: 1 1 22%; /* Adjust the flex-basis and max-width as needed to control size */
     max-width: 285px; /* You can adjust this value to fit more cards in a row */
@@ -52,11 +52,28 @@
 @media (max-width: 1200px) {
     .card {
         flex: 1 1 46%; /* Adjust the percentage to control how many cards per row */
+        max-width: 280px; /* Reduce the max width on smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 48%; /* Adjust the percentage for smaller screens */
+        max-width: 260px; /* Further reduce the max width */
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Stack cards vertically on smaller screens */
+        max-width: 240px; /* Further reduce the max width */
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 1 1 100%; /* Stack cards vertically on smallest screens */
+        max-width: 200px; /* Further reduce the max width */
+        margin-bottom: 20px; /* Add space between stacked cards */
     }
 }

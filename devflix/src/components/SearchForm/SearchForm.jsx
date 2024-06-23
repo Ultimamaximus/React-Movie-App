@@ -5,6 +5,7 @@ import './SearchForm.css';
 
 function SearchForm({ onSearchSubmit }) {
     const [searchTerm, setSearchTerm] = useState('');
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,8 +15,12 @@ function SearchForm({ onSearchSubmit }) {
         setSearchTerm('');
     };
 
+    const handleIconClick = () => {
+        setIsExpanded(!isExpanded);
+    };
+
     return (
-        <form className="search-form" onSubmit={handleSubmit}>
+        <form className={`search-form ${isExpanded ? 'expanded' : ''}`} onSubmit={handleSubmit}>
             <label htmlFor="search-input" className="sr-only">Search for movies</label>
             <input
                 type="text"
@@ -26,7 +31,7 @@ function SearchForm({ onSearchSubmit }) {
                 placeholder="Search for movies"
             />
             <button type="submit" className="search-button" aria-label="Search">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} onClick={handleIconClick} />
             </button>
         </form>
     );

@@ -4,6 +4,7 @@ import { fetchMovies } from '../../services/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import MovieCarousel from '../Carousel/MovieCarousel';
+import placeholderImage from '../../images/Placeholder.webp';
 import './MovieInfoCard.css';
 
 const MovieInfoCard = () => {
@@ -50,15 +51,21 @@ const MovieInfoCard = () => {
     return <div className="not-found">Movie not found</div>;
   }
 
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    e.target.src = placeholderImage;
+  };
+
   return (
     <div className="movie-info-page">
       <div className="movie-info-card">
         <div className="movie-info-title">{movie.title}</div>
         <div className="movie-info-body">
-          <img 
+        <img 
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
             alt={`${movie.title} poster`} 
-            className="movie-info-poster" 
+            className="movie-info-poster"
+            onError={handleImageError}
           />
           <div className="movie-info-details">
             <div className="movie-info-summary">{movie.overview}</div>

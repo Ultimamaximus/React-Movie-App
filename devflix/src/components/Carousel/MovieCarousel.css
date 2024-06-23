@@ -1,82 +1,138 @@
+/* src/components/MovieCarousel/MovieCarousel.css */
 .carousel-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: #93929200;
-    border-radius: 8px;
-    padding: 10px 0;
-    max-width: calc(200px * 6 + 50px); /* 6 items plus padding for the arrows */
-    margin: 0 auto; /* Center the carousel */
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #93929200;
+  border-radius: 8px;
+  padding: 10px 0;
+  max-width: calc(200px * 6 + 50px); /* 6 items plus padding for the arrows */
+  margin: 0 auto; /* Center the carousel */
+}
+
+.movie-carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px 0;
+  flex: 1;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 200px; /* Fixed width for each movie item */
+  text-align: center;
+}
+
+.carousel-item-poster {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.carousel-item-poster:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item-title {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #e5e5e5;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0; /* Start with hidden arrows */
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.carousel-container:hover .carousel-arrow {
+  opacity: 1; /* Show arrows when hovering over the carousel container */
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-arrow i {
+  font-size: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .carousel-container {
+    max-width: calc(200px * 4 + 40px); /* Adjust for 4 items */
   }
-  
-  .movie-carousel {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    gap: 10px;
-    padding: 10px 0;
-    flex: 1;
+}
+
+@media (max-width: 992px) {
+  .carousel-container {
+    max-width: calc(200px * 3 + 30px); /* Adjust for 3 items */
   }
-  
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: calc(200px * 2 + 20px); /* Adjust for 2 items */
+  }
+
   .carousel-item {
-    flex: 0 0 auto;
-    width: 200px; /* Fixed width for each movie item */
-    text-align: center;
+    width: 180px; /* Reduce item width */
   }
-  
-  .carousel-item-poster {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .carousel-item-poster:hover {
-    transform: scale(1.05);
-  }
-  
-  .carousel-item-title {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #e5e5e5;
-  }
-  
+
   .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    border: none;
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 0; /* Start with hidden arrows */
+    width: 40px;
+    height: 40px;
   }
-  
-  .left-arrow {
-    left: 10px;
-  }
-  
-  .right-arrow {
-    right: 10px;
-  }
-  
-  .carousel-container:hover .carousel-arrow {
-    opacity: 1; /* Show arrows when hovering over the carousel container */
-  }
-  
-  .carousel-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
+
   .carousel-arrow i {
-    font-size: 24px;
+    font-size: 20px;
   }
-  
+}
+
+@media (max-width: 576px) {
+  .carousel-container {
+    max-width: calc(100vw - 40px); /* Full width minus padding */
+    padding: 10px 0;
+  }
+
+  .carousel-item {
+    width: 150px; /* Further reduce item width */
+  }
+
+  .carousel-item-title {
+    font-size: 0.8em;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carousel-arrow i {
+    font-size: 18px;
+  }
+}

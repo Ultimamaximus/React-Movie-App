@@ -91,6 +91,103 @@
   background-color: #93929242;
   border-radius: 8px;
   width: 100%;
+  max-width: 900px;
   margin: 0px auto; /* Center the recommendations section */
   margin-top: 185px; /* Pushes the recommendations section to the bottom */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-info-card {
+    margin: 50px auto 20px;
+    padding: 15px;
+    max-width: 90%; /* Adjust to ensure it doesn't take full width */
+    flex-grow: 0.2;
+  }
+
+  .movie-info-title {
+    font-size: 1.5em;
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .movie-info-body {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .movie-info-poster {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+  }
+
+  .movie-info-summary {
+    font-size: 1em;
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .movie-info-extra {
+    font-size: 0.8rem;
+  }
+
+  .movie-info-rating {
+    font-size: 1rem;
+    padding: 8px 16px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .movie-info-recommendations {
+    margin-top: 50px;
+    padding: 15px;
+    max-width: 90%; /* Adjust to ensure it doesn't take full width */
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-info-card {
+    margin: 30px auto 20px;
+    padding: 10px;
+    max-width: 90%; /* Adjust to ensure it doesn't take full width */
+  }
+
+  .movie-info-title {
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Reduced margin */
+  }
+
+  .movie-info-body {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px; /* Reduced margin */
+  }
+
+  .movie-info-poster {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .movie-info-summary {
+    font-size: 0.9em;
+    margin-bottom: 10px; /* Reduced margin */
+  }
+
+  .movie-info-extra {
+    font-size: 0.8rem;
+  }
+
+  .movie-info-rating {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .movie-info-recommendations {
+    margin-top: 30px;
+    padding: 10px;
+    max-width: 90%; /* Adjust to ensure it doesn't take full width */
+  }
 }

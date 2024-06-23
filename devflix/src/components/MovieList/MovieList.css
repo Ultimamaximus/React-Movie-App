@@ -8,3 +8,31 @@
     gap: 15px;
 }
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .row {
+        max-width: 1000px; /* Adjust the maximum width for smaller screens */
+        gap: 12px; /* Adjust the gap for better spacing */
+    }
+}
+
+@media (max-width: 992px) {
+    .row {
+        max-width: 800px; /* Adjust the maximum width for smaller screens */
+        gap: 10px; /* Adjust the gap for better spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        max-width: 600px; /* Adjust the maximum width for smaller screens */
+        gap: 8px; /* Adjust the gap for better spacing */
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        max-width: 100%; /* Use full width on the smallest screens */
+        gap: 5px; /* Adjust the gap for better spacing */
+    }
+}

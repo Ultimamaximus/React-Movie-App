@@ -13,7 +13,7 @@ function Header({ onSearchSubmit }) {
                     <h1 className="site-title">DEVFLIX</h1>
                 </div>
             </a>
-            <SearchForm onSearchSubmit={onSearchSubmit} /> 
+            <SearchForm onSearchSubmit={onSearchSubmit} />
         </header>
     );
 }

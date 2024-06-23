@@ -1,3 +1,4 @@
+/* src/components/Header/Header.css */
 .search-block {
     width: 100%;
     display: flex;
@@ -9,7 +10,6 @@
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensures the header stays on top of other content */
-    
 }
 
 .logo-link {
@@ -33,4 +33,45 @@
 .site-title {
     font-size: 2rem;  /* Adjust size as needed */
     margin: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .search-block {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        justify-content: center;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    .logo-image {
+        width: 80px;  /* Adjust size as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-block {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo-image {
+        width: 60px;  /* Adjust size as needed */
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+    }
 }
